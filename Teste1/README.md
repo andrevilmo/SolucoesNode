@@ -16,6 +16,9 @@ No diretório node/task
 # Conteúdo do arquivo .env
 NODE_ENV=production
 
+
+*** Importante : não é possíve subir o arquivo de dump.tar.gz no git pois é muito grande.
+Para fins de teste colocar o arquivo de teste em Teste1\node\code\public\images\dump.targ.gz
 # Referências
 https://sequelize.org/
 https://sequelize.org/docs/v6/core-concepts/model-basics/
