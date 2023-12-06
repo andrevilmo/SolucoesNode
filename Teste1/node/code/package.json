@@ -1,0 +1,24 @@
+{
+  "name": "code",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "config": "^3.3.9",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "gunzip-maybe": "^1.4.2",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "knex": "^3.0.1",
+    "models": "file:./models/models",
+    "morgan": "~1.9.1",
+    "processoDownload": "file:./services/processoDownload",
+    "sqlite3": "^5.1.6",
+    "stream": "^0.0.2",
+    "tar-fs": "^3.0.4"
+  }
+}

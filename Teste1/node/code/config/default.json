@@ -1,0 +1,8 @@
+{
+    "fileToImport": {
+      "url": "https://coletasweb-files.s3.amazonaws.com/dump+(1).tar.gz",
+      "saved": "import.tar.gz",
+      "folderExtract": "toImport",
+      "flowControlFile": "download.control.txt"
+    }
+}
