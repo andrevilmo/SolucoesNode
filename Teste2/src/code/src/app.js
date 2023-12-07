@@ -38,11 +38,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.get('*.tar.gz', function(req, res, next) {
-  req.url = req.url ;//+ '.gz';
-  res.set('Content-Encoding', 'gzip');
-  //res.set('Content-Type', 'appli/css');
-  next();
-});
-
 module.exports = app;

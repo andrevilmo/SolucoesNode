@@ -39,4 +39,8 @@ https://www.digitalocean.com/community/tutorials/how-to-build-a-node-js-applicat
 https://semaphoreci.com/community/tutorials/dockerizing-a-node-js-web-application
 https://www.freecodecamp.org/portuguese/news/streams-em-node-js-tudo-o-que-voce-precisa-saber/
 https://github.com/mafintosh/tar-stream
+https://sequelize.org/docs/v6/other-topics/migrations/
+https://dev.to/rogeriorioli/iniciando-um-projeto-nodejs-express-com-typescript-4bfl
+https://apidog.com/blog/how-to-create-a-rest-api-with-node-js-and-express/
+https://ng.ant.design/docs/introduce/en
 

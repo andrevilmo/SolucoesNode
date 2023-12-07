@@ -1,0 +1,47 @@
+version: '2'
+services:
+  web:
+    build: crudcliente
+    command: npm run start
+    #volumes:
+    #  - .:/usr/app/
+    #  - /usr/app/node_modules
+    ports:
+      - "4200:4200"
+    networks:
+          backend:
+            ipv4_address: 172.35.0.6
+    environment:
+      - NODE_ENV=development
+  api:
+    build: code
+    command: "npm run start"
+    ports:
+      - "3000:3000"
+    networks:
+          backend:
+            ipv4_address: 172.35.0.2
+    environment:
+      NODE_ENV: "development"
+  bd:
+    build: bd
+    ports:
+      - "3306:3306"
+    environment:
+      NODE_ENV: "development"
+      MYSQL_DATABASE: "cliente"
+      MYSQL_USER: "teste"
+      MYSQL_PASSWORD: "root"
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_PORT: "3306"
+    networks:
+          backend:
+            ipv4_address: 172.35.0.3
+networks:
+  backend:
+    # Use a custom driver which takes special options
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.35.0.0/16
+         gateway: 172.35.0.1
