@@ -1,11 +1,13 @@
 const path = require('path');
-
+const fileSqlLite = 'out/database.sqlite';
+const filePath = path.resolve(__dirname,fileSqlLite);
+console.log( `Local do arquivo do sqllite : ${filePath}`)
 module.exports = {
 
   production: {
     client: 'sqlite3',
     connection: {
-      filename: path.resolve(__dirname, '../../models/out/database.sqlite')
+      filename: path.resolve(__dirname, './out/database.sqlite')
     },
     migrations: {
       tableName: 'knex_migrations'
@@ -26,7 +28,7 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: path.resolve(__dirname, '../../models/out/database.sqlite')
+      filename: path.resolve(__dirname, filePath)
     },
     migrations: {
       tableName: 'knex_migrations'

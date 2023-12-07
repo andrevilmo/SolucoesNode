@@ -3,26 +3,29 @@ services:
   web:
     build: crudcliente
     command: npm run start
-    #volumes:
-    #  - .:/usr/app/
-    #  - /usr/app/node_modules
     ports:
-      - "4200:4200"
+      - "3334:3334"
     networks:
           backend:
             ipv4_address: 172.35.0.6
     environment:
       - NODE_ENV=development
+    depends_on:
+      bd:
+        condition: service_healthy
   api:
     build: api
     command: "npm run start"
     ports:
-      - "3000:3000"
+      - "3333:3333"
     networks:
           backend:
             ipv4_address: 172.35.0.2
     environment:
       NODE_ENV: "development"
+    depends_on:
+      bd:
+        condition: service_healthy
   bd:
     build: bd
     ports:
@@ -34,6 +37,11 @@ services:
       MYSQL_PASSWORD: "root"
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_PORT: "3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
     networks:
           backend:
             ipv4_address: 172.35.0.3

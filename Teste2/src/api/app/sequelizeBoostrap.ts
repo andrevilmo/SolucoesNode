@@ -3,7 +3,7 @@ import 'dotenv/config'
 const config = require('config'); 
 const sequelize = new Sequelize({
   database:  "cliente" ,
-  host:  "127.0.0.1" ,
+  host:  "172.35.0.3" ,
   port:  3306 ,
   dialect:  "mysql" ,
   username: "root" ,

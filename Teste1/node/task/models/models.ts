@@ -1,5 +1,6 @@
 const knexConfig = require("./knexfile");
 const knex = require("knex")(knexConfig[process.env.NODE_ENV]);
+const path = require('path');
 export interface IInsertData {
 }
 export class InsertData {
@@ -7,6 +8,7 @@ export class InsertData {
   tableName: string = "None";
   Insert = (dataToInsert: IInsertData): Promise<boolean> => {
     return new Promise(async (resolve, reject) => {
+      
       let typeToInsert = dataToInsert.constructor.name;
       knex(typeToInsert)
         .insert(dataToInsert)

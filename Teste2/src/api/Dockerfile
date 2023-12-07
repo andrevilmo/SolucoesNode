@@ -3,8 +3,8 @@
 FROM node:latest
 RUN mkdir -p /opt/app
 WORKDIR /opt/app
-COPY src/package.json src/package-lock.json .
+COPY app/package.json app/package-lock.json .
 RUN npm install
-COPY ./ .
-EXPOSE 4200
+COPY ./app .
+EXPOSE 3333
 CMD [ "npm", "start"]

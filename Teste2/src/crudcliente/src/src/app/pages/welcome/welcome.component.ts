@@ -61,7 +61,11 @@ export class WelcomeComponent implements OnInit {
       this.getClientes();
     });
   }
-
+  novoCliente() {
+    this.cliente = { id: 0, name: "", cellphone: "", email: "" } as Cliente;
+    
+    this.showModal = true;
+  }
   // copia o cliente para ser editado.
   editCliente(cliente: Cliente) {
     this.cliente = { id: cliente.id, name: cliente.name, cellphone: cliente.cellphone, email: cliente.email } as Cliente;
@@ -69,12 +73,12 @@ export class WelcomeComponent implements OnInit {
     this.showModal = true;
   }
 
-  fechouModal() {
+  fechouModal() { 
     this.showModal = false;
   }
   salvou(clienteTosave: Cliente) {
     console.log(`clienteTosave : ${JSON.stringify(clienteTosave)} `);
-    if (this.cliente.id !== undefined) {
+    if (this.cliente.id !== undefined && this.cliente.id !== 0  ) {
       this.clienteService.updateCliente(clienteTosave).subscribe(() => {
         this.showModal = false;
         this.getClientes();

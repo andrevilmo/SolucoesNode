@@ -4,7 +4,8 @@ FROM node:latest
 RUN mkdir -p /opt/app
 WORKDIR /opt/app
 COPY src/package.json src/package-lock.json .
-RUN npm install
+RUN ulimit -d unlimited
 COPY ./src .
-EXPOSE 4200
+RUN npm install
+EXPOSE 3334
 CMD [ "npm", "start"]

@@ -68,6 +68,7 @@ export class ClienteService {
   // Manipulação de erros
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
+    console.log(`erro : ${error} : ${JSON.stringify(error)}`);
     if (error.error instanceof ErrorEvent) {
       // Erro ocorreu no lado do client
       errorMessage = error.error.message;

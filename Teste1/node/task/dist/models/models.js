@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Organizations = exports.Customers = exports.InsertData = void 0;
 const knexConfig = require("./knexfile");
 const knex = require("knex")(knexConfig[process.env.NODE_ENV]);
+const path = require('path');
 class InsertData {
     constructor() {
         this.tableName = "None";

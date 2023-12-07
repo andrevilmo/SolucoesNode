@@ -6,6 +6,8 @@
     <a>Cadastro de clientes</a>
   </nz-breadcrumb-item>
 </nz-breadcrumb>
+  <button type="button" nz-button nzType="default" class="btn btn-warning btn-sm" (click)="novoCliente()">Novo</button>
+            
     <nz-table ngSkipHydration="false" #basicTable [nzData]="clientes">
       <thead>
         <tr>

@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npx tsc && node --expose-gc --max_old_space_size=4096 dist/index.js",
-    "migrate": "knex migrate:latest --knexfile models/knexfile.js"
+    "start": "npx tsc && node --expose-gc --max_old_space_size=4096 dist/index.js ",
+    "migrate": "knex migrate:latest --knexfile models/knexfile.js && npm run copy-model ",
+    "copy-model": "mkdir dist\\models\\out &&  copy models\\out dist\\models\\out > nul"
   },
   "dependencies": {
     "config": "^3.3.9",
     "cookie-parser": "~1.4.4",
+    "copyfiles": "^2.4.1",
     "csv-parse": "^5.5.2",
     "debug": "~2.6.9",
     "dotenv": "^16.3.1",
@@ -29,6 +31,7 @@
     "typescript": "^5.3.2"
   },
   "devDependencies": {
-    "@types/node": "^20.10.3"
+    "@types/node": "^20.10.3",
+    "ts-node": "^10.9.1"
   }
 }
