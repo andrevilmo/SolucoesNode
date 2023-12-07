@@ -14,7 +14,7 @@ services:
     environment:
       - NODE_ENV=development
   api:
-    build: code
+    build: api
     command: "npm run start"
     ports:
       - "3000:3000"

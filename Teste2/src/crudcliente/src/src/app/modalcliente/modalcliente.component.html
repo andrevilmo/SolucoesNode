@@ -1,0 +1,14 @@
+
+    <nz-modal
+      [(nzVisible)]="isVisible"
+      nzTitle="Editando cliente" 
+      (nzOnCancel)="handleCancel()"
+      (nzOnOk)="handleOk()"
+      [nzOkLoading]="isOkLoading"
+    >
+      <p *nzModalContent> 
+
+        <app-formcliente [cliente]="cliente"></app-formcliente>
+      </p>
+    </nz-modal>
+  

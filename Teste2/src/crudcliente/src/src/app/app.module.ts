@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalclienteComponent } from './modalcliente/modalcliente.component';
+import { NzFormModule } from 'ng-zorro-antd/form';
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +13,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalclienteComponent,
+    NzFormModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
